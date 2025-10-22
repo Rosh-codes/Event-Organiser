@@ -1,0 +1,131 @@
+.header {
+  background: var(--primary-gradient);
+  padding: var(--spacing-4) 0;
+  box-shadow: var(--shadow-lg);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+}
+
+.header-container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--spacing-8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  color: rgb(39, 189, 189);
+  margin: 0;
+  font-size: var(--font-2xl);
+  font-weight: var(--font-weight-bold);
+  text-shadow: 2px 2px 4px rgba(194, 0, 175, 0.317);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-all);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-md);
+}
+
+.nav-link:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.auth-buttons {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.login-btn,
+.signup-btn,
+.logout-btn {
+  padding: var(--spacing-3) var(--spacing-5);
+  border: none;
+  border-radius: var(--radius-button);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-all);
+  font-size: var(--font-sm);
+}
+
+.login-btn {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.login-btn:hover {
+  background: var(--white);
+  color: var(--primary-color);
+}
+
+.signup-btn {
+  background: var(--white);
+  color: var(--primary-color);
+}
+
+.signup-btn:hover {
+  background: var(--light-gray);
+  transform: translateY(-2px);
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.welcome-text {
+  font-weight: var(--font-weight-medium);
+}
+
+.logout-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 var(--spacing-4);
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+
+  .logo h1 {
+    font-size: var(--font-xl);
+  }
+
+  .nav {
+    gap: var(--spacing-4);
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-2);
+  }
+
+  .login-btn,
+  .signup-btn,
+  .logout-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
