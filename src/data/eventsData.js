@@ -1,4 +1,4 @@
-// has to update
+// has to update for entries of data
 
 export const sampleEvents = [
   {
