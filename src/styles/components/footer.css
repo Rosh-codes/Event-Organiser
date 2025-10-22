@@ -1,0 +1,117 @@
+.footer {
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color) 0%,
+    var(--secondary-light) 100%
+  );
+  color: var(--white);
+  padding: var(--spacing-12) 0 var(--spacing-4);
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--spacing-8);
+}
+
+.footer-container:first-child {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-8);
+  margin-bottom: var(--spacing-8);
+}
+
+.footer-section h3 {
+  font-size: var(--font-xl);
+  margin-bottom: var(--spacing-4);
+  color: var(--accent-color);
+}
+
+.footer-section h4 {
+  font-size: var(--font-lg);
+  margin-bottom: var(--spacing-4);
+  color: var(--light-gray);
+}
+
+.footer-section p {
+  line-height: var(--leading-relaxed);
+  color: var(--border-gray);
+  margin-bottom: var(--spacing-4);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: var(--spacing-2);
+}
+
+.footer-section a {
+  color: var(--border-gray);
+  text-decoration: none;
+  transition: var(--transition-all);
+  display: inline-block;
+}
+
+.footer-section a:hover {
+  color: var(--accent-color);
+  transform: translateX(5px);
+}
+
+.social-links {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.social-links a {
+  font-size: var(--font-xl);
+  padding: var(--spacing-2);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: var(--transition-all);
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--spacing-4);
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: var(--dark-gray);
+  font-size: var(--font-sm);
+}
+
+@media (max-width: 768px) {
+  .footer-container:first-child {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-6);
+  }
+
+  .footer {
+    padding: var(--spacing-8) 0 var(--spacing-4);
+  }
+
+  .footer-container {
+    padding: 0 var(--spacing-4);
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-bottom p {
+    font-size: var(--font-xs);
+    line-height: var(--leading-relaxed);
+  }
+}

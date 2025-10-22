@@ -9,7 +9,7 @@ const Header = ({ user, onLoginClick, onSignupClick, onLogout }) => {
         </div>
         <nav className="nav">
           <a href="#home" className="nav-link">
-            Main Home
+            Home
           </a>
           {user ? (
             <div className="user-section">

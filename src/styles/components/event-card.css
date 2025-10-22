@@ -1,0 +1,237 @@
+.event-card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-hover);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.event-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-hover);
+}
+
+.event-card:hover .event-image img {
+  transform: scale(1.05);
+}
+
+.event-category {
+  position: absolute;
+  top: var(--spacing-3);
+  left: var(--spacing-3);
+  background: rgba(102, 126, 234, 0.9);
+  color: var(--white);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+}
+
+.featured-badge {
+  position: absolute;
+  top: var(--spacing-3);
+  right: var(--spacing-3);
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: var(--white);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+}
+
+.event-content {
+  padding: var(--spacing-6);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-title {
+  font-size: var(--font-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--secondary-color);
+  margin: 0 0 var(--spacing-2) 0;
+  line-height: var(--leading-tight);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.event-description {
+  color: var(--text-muted);
+  font-size: var(--font-sm);
+  line-height: var(--leading-relaxed);
+  margin: 0 0 var(--spacing-4) 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.event-details {
+  margin-bottom: var(--spacing-6);
+  flex: 1;
+}
+
+.event-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-2);
+  font-size: var(--font-sm);
+  color: var(--text-color);
+}
+
+.detail-icon {
+  margin-right: var(--spacing-2);
+  font-size: var(--font-base);
+  width: 20px;
+}
+
+.detail-text {
+  font-weight: var(--font-weight-medium);
+}
+
+.event-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--medium-gray);
+}
+
+.event-attendees {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: var(--font-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.attendees-icon {
+  margin-right: var(--spacing-2);
+  font-size: var(--font-base);
+}
+
+.register-btn {
+  padding: var(--spacing-3) var(--spacing-5);
+  background: var(--primary-gradient);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-button);
+  font-size: var(--font-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: var(--transition-all);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  min-width: 120px;
+  justify-content: center;
+}
+
+.register-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-button);
+}
+
+.register-btn:disabled {
+  cursor: not-allowed;
+}
+
+.register-btn.registered {
+  background: linear-gradient(
+    135deg,
+    var(--success-color) 0%,
+    var(--success-light) 100%
+  );
+}
+
+.register-btn.registered:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.loading-spinner {
+  animation: spin var(--duration-1000) linear infinite;
+}
+
+.check-icon {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-base);
+}
+
+@media (max-width: 768px) {
+  .event-card {
+    margin-bottom: var(--spacing-4);
+  }
+
+  .event-image {
+    height: 180px;
+  }
+
+  .event-content {
+    padding: var(--spacing-5);
+  }
+
+  .event-title {
+    font-size: var(--font-lg);
+  }
+
+  .event-footer {
+    flex-direction: column;
+    gap: var(--spacing-4);
+    align-items: stretch;
+  }
+
+  .register-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-image {
+    height: 160px;
+  }
+
+  .event-content {
+    padding: var(--spacing-4);
+  }
+
+  .event-title {
+    font-size: var(--font-base);
+  }
+
+  .event-description {
+    font-size: var(--font-sm);
+  }
+
+  .event-detail {
+    font-size: var(--font-xs);
+  }
+}
