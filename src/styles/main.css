@@ -57,6 +57,15 @@
   font-weight: var(--font-weight-medium);
   opacity: 0.9;
 }
+.logo {
+  display: flex;
+  align-items: center; 
+
+}
+
+.logo img{
+  height: 60px;
+}
 
 .hero-section {
   background: var(--primary-gradient);
