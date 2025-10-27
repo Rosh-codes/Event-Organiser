@@ -64,12 +64,6 @@ const EventCard = ({ event, onRegister }) => {
             <span className="detail-text">{event.location}</span>
           </div>
 
-          <div className="event-detail">
-            <span className="detail-icon">money</span>
-            <span className="detail-text">
-              {event.price === 0 ? "Free" : `$${event.price}`}
-            </span>
-          </div>
         </div>
 
         <div className="event-footer">
