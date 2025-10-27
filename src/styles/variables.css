@@ -1,40 +1,40 @@
 :root {
   /* Primary Colors */
-  --primary-gradient: linear-gradient(135deg, #2b7e89 0%, #ca06b0 100%);
-  --primary-color: #00d5ff;
-  --primary-dark: #a24b4b;
-  --primary-light: #f22c00;
+  --primary-gradient: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #312e81 100%);
+  --primary-color: #38bdf8;
+  --primary-dark: #0a0e1a;
+  --primary-light: #60a5fa;
 
   /* Secondary Colors */
-  --secondary-color: #ff00c8;
-  --secondary-light: #4dabae;
-  --accent-color: #00c3ff;
-  --accent-dark: #00fbff;
+  --secondary-color: #6366f1;
+  --secondary-light: #93c5fd;
+  --accent-color: #06b6d4;
+  --accent-dark: #0ea5e9;
 
   /* Status Colors */
-  --success-color: #27ae60;
-  --success-light: #2ecc71;
-  --warning-color: #f39c12;
-  --warning-light: #f1c40f;
-  --error-color: #e74c3c;
-  --error-light: #ec7063;
+  --success-color: #22c55e;
+  --success-light: #4ade80;
+  --warning-color: #facc15;
+  --warning-light: #fde047;
+  --error-color: #ef4444;
+  --error-light: #f87171;
 
   /* Neutral Colors */
   --white: #ffffff;
   --black: #000000;
-  --light-gray: #f8f9fa;
-  --medium-gray: #ecf0f1;
-  --border-gray: #bdc3c7;
-  --dark-gray: #95a5a6;
-  --text-color: #2c3e50;
-  --text-muted: #7f8c8d;
-  --text-light: #95a5a6;
+  --light-gray: #f8fafc;
+  --medium-gray: #e2e8f0;
+  --border-gray: #cbd5e1;
+  --dark-gray: #64748b;
+  --text-color: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-light: #cbd5e1;
 
   /* Background Colors */
-  --bg-primary: #f8f9fa;
-  --bg-secondary: #ffffff;
-  --bg-dark: #2c3e50;
-  --bg-overlay: rgba(0, 0, 0, 0.7);
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-dark: #020617;
+  --bg-overlay: rgba(15, 23, 42, 0.8);
 
   --font-family: "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     sans-serif;
@@ -86,10 +86,10 @@
   --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 
   /* Custom Shadows */
-  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.1);
-  --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
-  --shadow-button: 0 4px 12px rgba(0, 255, 255, 0.3);
-  --shadow-modal: 0 20px 40px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 4px 20px rgba(14, 165, 233, 0.15);
+  --shadow-card-hover: 0 8px 30px rgba(14, 165, 233, 0.25);
+  --shadow-button: 0 4px 12px rgba(6, 182, 212, 0.3);
+  --shadow-modal: 0 20px 40px rgba(15, 23, 42, 0.25);
 
   --radius-none: 0;
   --radius-sm: 0.25rem; /* 4px */
