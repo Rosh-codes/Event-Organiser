@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 
 const LoginForm = ({ onLogin, onClose, onSwitchToSignup }) => {
   const [formData, setFormData] = useState({
@@ -61,13 +61,13 @@ const LoginForm = ({ onLogin, onClose, onSwitchToSignup }) => {
     }, 1000);
   };
 
-  const handleGuestLogin = () => {
-    onLogin({
-      name: "Guest User",
-      email: "guest@example.com",
-      isGuest: true,
-    });
-  };
+  // const handleGuestLogin = () => {
+  //   onLogin({
+  //     name: "Guest User",              //I removed guest login
+  //     email: "guest@example.com",
+  //     isGuest: true,
+  //   });
+  // };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -120,14 +120,14 @@ const LoginForm = ({ onLogin, onClose, onSwitchToSignup }) => {
             {isLoading ? "Logging in..." : "Login"}
           </button>
         </form>
-
+{/* 
         <div className="divider">
           <span>OR</span>
-        </div>
+        </div> */}
 
-        <button className="guest-btn" onClick={handleGuestLogin}>
+        {/* <button className="guest-btn" onClick={handleGuestLogin}>
           Continue as Guest
-        </button>
+        </button> */}
 
         <div className="switch-form">
           <p>

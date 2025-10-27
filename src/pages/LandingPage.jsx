@@ -8,12 +8,14 @@ import {
   getFeaturedEvents,
 } from "../data/eventsData";
 
+
 const LandingPage = ({ user, onEventRegister }) => {
   const [searchFilters, setSearchFilters] = useState({
     searchTerm: "",
     category: "",
   });
   const [showFeaturedOnly, setShowFeaturedOnly] = useState(false);
+
 
   const filteredEvents = useMemo(() => {
     let events = showFeaturedOnly
@@ -26,29 +28,34 @@ const LandingPage = ({ user, onEventRegister }) => {
     );
   }, [searchFilters, showFeaturedOnly]);
 
+
   const handleSearch = (filters) => {
     setSearchFilters(filters);
   };
+
 
   const handleEventRegister = (event) => {
     onEventRegister && onEventRegister(event);
     console.log(`Registered for: ${event.title}`);
   };
 
+
   const featuredEvents = getFeaturedEvents(sampleEvents);
+
 
   return (
     <div className="landing-page">
       <section className="hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">Landing Title</h1>
+          <h1 className="hero-title">"ROD: Your Fresh Start to Campus Fun!</h1>
           <p className="hero-subtitle">
             {user?.isGuest
-              ? `Welcome, ${user.name}! add slogn here too`
+              ? `Welcome, ${user.name}! \n Ready to make uni life unforgettable? 🎉 `
               : user
               ? `Welcome back, ${user.name}! Ready for your next adventure?`
-              : "add slogn here to attract users"}
+              : "Login To Explore your adventure"}
           </p>
+
 
           <SearchBar
             onSearch={handleSearch}
@@ -57,6 +64,7 @@ const LandingPage = ({ user, onEventRegister }) => {
           />
         </div>
       </section>
+
 
       <section className="events-section">
         <div className="section-container">
@@ -75,6 +83,7 @@ const LandingPage = ({ user, onEventRegister }) => {
               </span>
             </div>
 
+
             <div className="filter-controls">
               <button
                 className={`filter-btn ${showFeaturedOnly ? "active" : ""}`}
@@ -84,6 +93,7 @@ const LandingPage = ({ user, onEventRegister }) => {
               </button>
             </div>
           </div>
+
 
           {filteredEvents.length === 0 ? (
             <div className="no-events">
@@ -119,6 +129,7 @@ const LandingPage = ({ user, onEventRegister }) => {
         </div>
       </section>
 
+
       {!showFeaturedOnly &&
         !searchFilters.searchTerm &&
         !searchFilters.category &&
@@ -129,6 +140,7 @@ const LandingPage = ({ user, onEventRegister }) => {
                 <h2 className="section-title">✨ Featured Premium Events</h2>
                 <p className="section-subtitle">Slogans for premium ones</p>
               </div>
+
 
               <div className="featured-events-grid">
                 {featuredEvents.slice(0, 3).map((event) => (
@@ -146,4 +158,5 @@ const LandingPage = ({ user, onEventRegister }) => {
   );
 };
 
-export default LandingPage;
+
+export default LandingPage; 
