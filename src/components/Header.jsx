@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-
+import logo from "../assets/logo.png"
 const Header = ({ user, onLoginClick, onSignupClick, onLogout }) => {
   return (
     <header className="header">
       <div className="header-container">
         <div className="logo">
-          <h1>ROD Event Organizer</h1>
+        <img src={logo} alt="" />  
+        <h1> Event Organizer</h1>
+  
         </div>
         <nav className="nav">
           <a href="#home" className="nav-link">

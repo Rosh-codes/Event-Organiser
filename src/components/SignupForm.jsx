@@ -38,8 +38,10 @@ const SignupForm = ({ onSignup, onClose, onSwitchToLogin }) => {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Please enter a valid email";
+    }else if(!formData.email.endsWith('@edu.rtu.lv')){
+      newErrors.email = 'Please use your RTU email '
     }
-
+    
     if (!formData.password) {
       newErrors.password = "Password is required";
     } else if (formData.password.length < 6) {

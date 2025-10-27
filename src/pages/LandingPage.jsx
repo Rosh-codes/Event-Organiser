@@ -47,7 +47,7 @@ const LandingPage = ({ user, onEventRegister }) => {
     <div className="landing-page">
       <section className="hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">"ROD: Your Fresh Start to Campus Fun!</h1>
+          <h1 className="hero-title">ROD: Your Fresh Start to Campus Fun!</h1>
           <p className="hero-subtitle">
             {user?.isGuest
               ? `Welcome, ${user.name}! \n Ready to make uni life unforgettable? 🎉 `
