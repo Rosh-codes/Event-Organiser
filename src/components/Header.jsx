@@ -1,20 +1,20 @@
 import logo from "../assets/logo.png"
 const Header = ({ user, onLoginClick, onSignupClick, onLogout }) => {
   return (
-    <header className="header">
+    <header className="header" >
       <div className="header-container">
-        <div className="logo">
+        <div className="logo" id="header">
         <img src={logo} alt="" />  
         <h1> Event Organizer</h1>
   
         </div>
         <nav className="nav">
-          <a href="#home" className="nav-link">
+          <a href="#header" className="nav-link">
             Home
           </a>
           {user ? (
             <div className="user-section">
-              <span className="welcome-text">Heyy, {user.name}!</span>
+              <span className="welcome-text">Hey, {user.name}!</span>
               <button className="logout-btn" onClick={onLogout}>
                 Logout
               </button>
