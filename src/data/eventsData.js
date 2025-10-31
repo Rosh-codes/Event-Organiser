@@ -10,7 +10,7 @@ export const sampleEvents = [
     time: "2:00 PM",
     location: "Computer Science Building, Room 301",
     category: "technology",
-    attendees: 45,
+    attendees: 25,
     featured: true,
   },
   {
@@ -22,7 +22,7 @@ export const sampleEvents = [
     time: "10:00 AM",
     location: "Computer Science Building, Room 202",
     category: "technology",
-    attendees: 50,
+    attendees: 3,
     featured: true,
   },
   {
@@ -58,7 +58,7 @@ export const sampleEvents = [
     time: "9:30 AM",
     location: "Business School, Room 301",
     category: "business",
-    attendees: 150,
+    attendees: 25,
     featured: false,
   },
   {
@@ -70,7 +70,7 @@ export const sampleEvents = [
     time: "11:00 AM",
     location: "Business School, Conference Hall",
     category: "business",
-    attendees: 30,
+    attendees: 20,
     featured: true,
   },
   {
@@ -94,7 +94,7 @@ export const sampleEvents = [
     time: "15:30",
     location: "Engineering Building, Lab 204",
     category: "technology",
-    attendees: 60,
+    attendees: 28,
     featured: false,
   },
   {
@@ -106,7 +106,7 @@ export const sampleEvents = [
     time: "7:00 PM",
     location: "Student Union Auditorium",
     category: "music",
-    attendees: 150,
+    attendees: 30,
     featured: true,
   },
   {
@@ -118,7 +118,7 @@ export const sampleEvents = [
     time: "10:00 AM",
     location: "Business School Conference Hall",
     category: "business",
-    attendees: 200,
+    attendees: 25,
     featured: true,
   },
   {
@@ -130,7 +130,7 @@ export const sampleEvents = [
     time: "9:00 AM",
     location: "University Sports Complex",
     category: "sports",
-    attendees: 300,
+    attendees: 30,
     featured: true,
   },
   {
@@ -142,7 +142,7 @@ export const sampleEvents = [
     time: "11:00 AM",
     location: "Arts Building Gallery",
     category: "arts & culture",
-    attendees: 120,
+    attendees: 25,
     featured: false,
   },
   {
@@ -154,7 +154,7 @@ export const sampleEvents = [
     time: "12:00 PM",
     location: "Campus Square",
     category: "food & drink",
-    attendees: 400,
+    attendees: 30,
     featured: true,
   },
   {
@@ -166,7 +166,7 @@ export const sampleEvents = [
     time: "2:00 PM",
     location: "Health Center Conference Room",
     category: "health & wellness",
-    attendees: 50,
+    attendees: 23,
     featured: false,
   },
   {
@@ -178,7 +178,7 @@ export const sampleEvents = [
     time: "9:00 AM",
     location: "University Library Conference Center",
     category: "education",
-    attendees: 250,
+    attendees: 30,
     featured: true,
   },
   {
@@ -190,7 +190,7 @@ export const sampleEvents = [
     time: "10:00 AM",
     location: "Computer Science Building, Room 401",
     category: "technology",
-    attendees: 45,
+    attendees: 25,
     featured: false,
   },
   {
@@ -214,7 +214,7 @@ export const sampleEvents = [
     time: "11:00 AM",
     location: "Engineering Building, HPC Lab",
     category: "technology",
-    attendees: 40,
+    attendees: 20,
     featured: false,
   },
   {
@@ -226,7 +226,7 @@ export const sampleEvents = [
     time: "7:00 PM",
     location: "Business School Atrium",
     category: "business",
-    attendees: 25,
+    attendees: 15,
     featured: true,
   },
 ];

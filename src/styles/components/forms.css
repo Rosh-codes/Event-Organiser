@@ -659,7 +659,7 @@
 }
 
 .switch-form p {
-  color: var(--text-light);
+  color: var(--text-muted);
   font-size: var(--font-sm);
   margin: 0;
 }
