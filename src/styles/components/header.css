@@ -101,11 +101,14 @@
   background: rgba(255, 255, 255, 0.3);
 }
 
+/* Tablet and smaller devices */
 @media (max-width: 768px) {
+  .header {
+    padding: var(--spacing-3) 0;
+  }
+
   .header-container {
     padding: 0 var(--spacing-4);
-    flex-direction: column;
-    gap: var(--spacing-4);
   }
 
   .logo h1 {
@@ -116,16 +119,64 @@
     gap: var(--spacing-4);
   }
 
-  .auth-buttons {
-    flex-direction: column;
-    width: 100%;
-    gap: var(--spacing-2);
+  .nav-link {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--font-sm);
   }
 
   .login-btn,
   .signup-btn,
   .logout-btn {
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-xs);
+  }
+
+  .welcome-text {
+    font-size: var(--font-sm);
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .header {
+    padding: var(--spacing-2) 0;
+  }
+
+  .header-container {
+    padding: 0 var(--spacing-3);
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+
+  .logo h1 {
+    font-size: var(--font-lg);
+  }
+
+  .nav {
+    justify-content: center;
+    gap: var(--spacing-20);
+  }
+
+  .nav-link {
+    padding: var(--spacing-1) var(--spacing-2);
+    font-size: var(--font-xs);
+  }
+
+  .auth-buttons {
     width: 100%;
-    max-width: 200px;
+    justify-content: center;
+    gap: var(--spacing-3);
+  }
+
+  .login-btn,
+  .signup-btn,
+  .logout-btn {
+    padding: var(--spacing-1) var(--spacing-3);
+    font-size: var(--font-xs);
+    max-width: 120px;
+  }
+
+  .welcome-text {
+    font-size: var(--font-xs);
   }
 }
