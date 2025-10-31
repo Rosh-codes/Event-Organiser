@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import  { useState, useMemo } from "react";
 import EventCard from "../components/EventCard";
 import SearchBar from "../components/SearchBar";
 import {
@@ -18,14 +18,24 @@ const LandingPage = ({ user, onEventRegister }) => {
 
 
   const filteredEvents = useMemo(() => {
+    // Start with either featured events or all events
     let events = showFeaturedOnly
       ? getFeaturedEvents(sampleEvents)
       : sampleEvents;
-    return filterEvents(
+    
+    // Apply search and category filters
+    const filtered = filterEvents(
       events,
       searchFilters.searchTerm,
       searchFilters.category
     );
+
+    // When using filters, show only exact matches
+    if (searchFilters.searchTerm || searchFilters.category) {
+      return filtered;
+    }
+
+    return filtered;
   }, [searchFilters, showFeaturedOnly]);
 
 
@@ -36,7 +46,8 @@ const LandingPage = ({ user, onEventRegister }) => {
 
   const handleEventRegister = (event) => {
     onEventRegister && onEventRegister(event);
-    console.log(`Registered for: ${event.title}`);
+    
+    alert(`Registered for: ${event.title},confirmation has been sent to your email`);
   };
 
 
@@ -66,6 +77,7 @@ const LandingPage = ({ user, onEventRegister }) => {
       </section>
 
 
+
       <section className="events-section" id="events">
         <div className="section-container">
           <div className="section-header">
@@ -88,7 +100,7 @@ const LandingPage = ({ user, onEventRegister }) => {
               <button
                 className={`filter-btn ${showFeaturedOnly ? "active" : ""}`}
                 onClick={() => setShowFeaturedOnly(!showFeaturedOnly)}
-              >
+                >
                 ⭐ Featured Only
               </button>
             </div>
@@ -106,10 +118,10 @@ const LandingPage = ({ user, onEventRegister }) => {
               </p>
               {(searchFilters.searchTerm || searchFilters.category) && (
                 <button
-                  className="clear-search-btn"
-                  onClick={() =>
-                    setSearchFilters({ searchTerm: "", category: "" })
-                  }
+                className="clear-search-btn"
+                onClick={() =>
+                  setSearchFilters({ searchTerm: "", category: "" })
+                }
                 >
                   Clear Search
                 </button>
@@ -119,9 +131,9 @@ const LandingPage = ({ user, onEventRegister }) => {
             <div className="events-grid">
               {filteredEvents.map((event) => (
                 <EventCard
-                  key={event.id}
-                  event={event}
-                  onRegister={handleEventRegister}
+                key={event.id}
+                event={event}
+                onRegister={handleEventRegister}
                 />
               ))}
             </div>
@@ -130,30 +142,33 @@ const LandingPage = ({ user, onEventRegister }) => {
       </section>
 
 
+      
       {!showFeaturedOnly &&
         !searchFilters.searchTerm &&
         !searchFilters.category &&
+        !filteredEvents.some(event => event.featured) &&
         featuredEvents.length > 0 && (
           <section className="featured-section">
-            <div className="section-container">
-              <div className="section-header">
-                <h2 className="section-title">✨ Featured Premium Events</h2>
-                <p className="section-subtitle">Slogans for premium ones</p>
-              </div>
-
-
-              <div className="featured-events-grid" >
-                {featuredEvents.slice(0, 3).map((event) => (
-                  <EventCard
-                    key={event.id}
-                    event={event}
-                    onRegister={handleEventRegister}
-                  />
-                ))}
-              </div>
-            </div>
+          <div className="section-container">
+          <div className="section-header">
+          <h2 className="section-title">✨ Featured Premium Events</h2>
+          <p className="section-subtitle">Slogans for premium ones</p>
+          </div>
+          
+          <div className="featured-events-grid" >
+          {featuredEvents.slice(0, 3).map((event) => (
+            <EventCard
+            key={event.id}
+            event={event}
+            onRegister={handleEventRegister}
+            />
+          ))}
+          </div>
+          </div>
           </section>
+      
         )}
+      
     </div>
   );
 };

@@ -251,8 +251,8 @@
 }
 
 .search-input {
-  flex: 1;
-  padding: var(--spacing-4) 0;
+  /* flex: 1; */
+  padding-left: 20px;
   border: none;
   outline: none;
   font-size: var(--font-base);
@@ -261,7 +261,7 @@
 }
 
 .search-input::placeholder {
-  color: var(--text-light);
+  color: rgb(100, 97, 97);
   font-style: italic;
 }
 

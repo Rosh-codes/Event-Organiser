@@ -6,14 +6,14 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-section">
           <h3>ROD EVENT HUB</h3>
-          <p>add some short slogan</p>
+          <p>University can a fun place too !</p>
         </div>
         {/* // make them work */}
         <div className="footer-section">
           <h4>Quick Links</h4>
           <ul>
             <li>
-              <a href="#home">Home</a>
+              <a href="#HomeScroll">Home</a>
             </li>
             <li>
               <a href="#events">Events</a>
@@ -28,19 +28,16 @@ const Footer = () => {
         </div>
         {/* // make them work */}
         <div className="footer-section">
-          <h4>Categories</h4>
+          <h4>Support Us</h4>
           <ul>
             <li>
-              <a href="#music">Music</a>
+              <a href="https://www.paypal.com/lv/home" target="__blank">Paypal</a>
             </li>
             <li>
-              <a href="#technology">Technology</a>
+              <a href="https://stripe.com/en-lv" target="__blank">Stripe</a>
             </li>
             <li>
-              <a href="#sports">Sports</a>
-            </li>
-            <li>
-              <a href="#business">Business</a>
+              <a href="https://buymeacoffee.com/" target="__blank">Buy Me A Cofee</a>
             </li>
           </ul>
         </div>
@@ -48,17 +45,53 @@ const Footer = () => {
           <h4>Connect With Us</h4>
           <div className="social-links">
             {/* // addd icons for each social media */}
-            <a href="#facebook" aria-label="Facebook">
-              fb
+            <a 
+              href="https://www.facebook.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="Facebook"
+            >
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png" 
+                alt="Facebook" 
+                style={{ width: "24px", height: "24px" }}
+              />
             </a>
-            <a href="#twitter" aria-label="Twitter">
-              twi
+            <a 
+              href="https://twitter.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="Twitter"
+            >
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/512px-Logo_of_Twitter.svg.png" 
+                alt="Twitter" 
+                style={{ width: "24px", height: "24px" }}
+              />
             </a>
-            <a href="#instagram" aria-label="Instagram">
-              insta
+            <a 
+              href="https://www.instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="Instagram"
+            >
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" 
+                alt="Instagram" 
+                style={{ width: "24px", height: "24px" }}
+              />
             </a>
-            <a href="#linkedin" aria-label="LinkedIn">
-              liken
+            <a 
+              href="https://linkedin.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="LinkedIn"
+            >
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png" 
+                alt="LinkedIn" 
+                style={{ width: "24px", height: "24px" }}
+              />
             </a>
           </div>
         </div>

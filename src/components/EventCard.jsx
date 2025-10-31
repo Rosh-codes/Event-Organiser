@@ -50,17 +50,17 @@ const EventCard = ({ event, onRegister }) => {
 
         <div className="event-details">
           <div className="event-detail">
-            <span className="detail-icon">cal</span>
+            <span className="detail-icon">Date: </span>
             <span className="detail-text">{formatDate(event.date)}</span>
           </div>
 
           <div className="event-detail">
-            <span className="detail-icon">clock</span>
-            <span className="detail-text">{formatTime(event.time)}</span>
+            <span className="detail-icon">Time:</span>
+            <span className="detail-text">{event.time}</span>
           </div>
 
           <div className="event-detail">
-            <span className="detail-icon">landMark</span>
+            <span className="detail-icon">Location:</span>
             <span className="detail-text">{event.location}</span>
           </div>
 
