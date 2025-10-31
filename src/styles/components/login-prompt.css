@@ -1,0 +1,40 @@
+.login-prompt{
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  min-height: 400px;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.login-prompt-content {
+  text-align: center;
+  padding: 2rem;
+}
+.login-prompt-content button{
+    color: var(--primary-color);
+}
+.login-prompt-content button:hover{
+    color: var(--secondary-color);
+}
+.login-prompt-content img{
+    height: 40vh;
+    width: auto;
+    margin: auto;
+}
+
+
+.login-prompt h2 {
+  color: var(--white);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.login-prompt p {
+    color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}

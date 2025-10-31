@@ -72,7 +72,11 @@ function AppContent() {
       />
 
       <main className="main-content">
-        <LandingPage user={user} onEventRegister={handleEventRegister} />
+        <LandingPage 
+          user={user} 
+          onEventRegister={handleEventRegister}
+          onShowLoginForm={handleLoginClick}
+        />
       </main>
 
       <Footer />

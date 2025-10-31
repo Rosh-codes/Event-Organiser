@@ -64,7 +64,7 @@ const Footer = () => {
               aria-label="Twitter"
             >
               <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/512px-Logo_of_Twitter.svg.png" 
+                src="https://img.icons8.com/?size=100&id=phOKFKYpe00C&format=png&color=000000" 
                 alt="Twitter" 
                 style={{ width: "24px", height: "24px" }}
               />

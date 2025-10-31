@@ -12,6 +12,7 @@
 @import "./components/footer.css";
 @import "./components/event-card.css";
 @import "./components/search-bar.css";
+@import "./components/login-prompt.css";
 
 /* Page styles */
 @import "./pages/landing.css";
