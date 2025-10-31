@@ -3,13 +3,13 @@ const Header = ({ user, onLoginClick, onSignupClick, onLogout }) => {
   return (
     <header className="header" >
       <div className="header-container">
-        <div className="logo" id="header">
+        <div className="logo" >
         <img src={logo} alt="" />  
         <h1> Event Organizer</h1>
   
         </div>
         <nav className="nav">
-          <a href="#header" className="nav-link">
+          <a href="#HomeScroll" className="nav-link">
             Home
           </a>
           {user ? (

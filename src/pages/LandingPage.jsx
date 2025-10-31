@@ -44,10 +44,10 @@ const LandingPage = ({ user, onEventRegister }) => {
 
 
   return (
-    <div className="landing-page">
+    <div className="landing-page"  id="HomeScroll">
       <section className="hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">ROD: Your Fresh Start to Campus Fun!</h1>
+          <h1 className="hero-title" >ROD: Your Fresh Start to Campus Fun!</h1>
           <p className="hero-subtitle">
             {user?.isGuest
               ? `Welcome, ${user.name}! \n Ready to make uni life unforgettable? 🎉 `
@@ -66,7 +66,7 @@ const LandingPage = ({ user, onEventRegister }) => {
       </section>
 
 
-      <section className="events-section">
+      <section className="events-section" id="events">
         <div className="section-container">
           <div className="section-header">
             <div className="section-title-wrapper">
@@ -142,7 +142,7 @@ const LandingPage = ({ user, onEventRegister }) => {
               </div>
 
 
-              <div className="featured-events-grid">
+              <div className="featured-events-grid" >
                 {featuredEvents.slice(0, 3).map((event) => (
                   <EventCard
                     key={event.id}
