@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import logo from "../assets/logo.png"
 
-const Header = ({ user, onLoginClick, onSignupClick, onLogout }) => {
+const Header = ({ user, onLoginClick, onSignupClick, onLogout, onAddEventClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -34,6 +34,9 @@ const Header = ({ user, onLoginClick, onSignupClick, onLogout }) => {
           {user ? (
             <div className="user-section">
               <span className="welcome-text">Hey, {user.name}!</span>
+              <button className="add-event-btn" onClick={() => { onAddEventClick && onAddEventClick(); closeMenu(); }}>
+                + Add Event
+              </button>
               <button className="logout-btn" onClick={() => { onLogout(); closeMenu(); }}>
                 Logout
               </button>

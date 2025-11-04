@@ -1,17 +1,17 @@
-import  { useState, useMemo } from "react";
+import  { useState, useMemo, useEffect } from "react";
 import EventCard from "../components/EventCard";
 import SearchBar from "../components/SearchBar";
 import HideEvent from "../components/HideEvent"
 
 import {
-  sampleEvents,
   eventCategories,
   filterEvents,
   getFeaturedEvents,
 } from "../data/eventsData";
+import { initScrollReveal } from "../utils/scrollReveal";
 
 
-const LandingPage = ({ user, onEventRegister, onShowLoginForm }) => {
+const LandingPage = ({ user, events = [], onEventRegister, onShowLoginForm }) => {
   const [searchFilters, setSearchFilters] = useState({
     searchTerm: "",
     category: "",
@@ -19,11 +19,15 @@ const LandingPage = ({ user, onEventRegister, onShowLoginForm }) => {
   const [showFeaturedOnly, setShowFeaturedOnly] = useState(false);
 
 
+  useEffect(() => {
+    initScrollReveal();
+  }, []);
+
   const filteredEvents = useMemo(() => {
     // Start with either featured events or all events
-    let events = showFeaturedOnly
-      ? getFeaturedEvents(sampleEvents)
-      : sampleEvents;
+    let source = showFeaturedOnly
+      ? getFeaturedEvents(events)
+      : events;
     
     // Apply search and category filters
     const filtered = filterEvents(
@@ -53,7 +57,7 @@ const LandingPage = ({ user, onEventRegister, onShowLoginForm }) => {
   };
 
 
-  const featuredEvents = getFeaturedEvents(sampleEvents);
+  const featuredEvents = getFeaturedEvents(events);
 
 
   return (
