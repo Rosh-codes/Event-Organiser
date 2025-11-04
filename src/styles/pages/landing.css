@@ -101,7 +101,7 @@
 .section-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: var(--spacing-10);
   gap: var(--spacing-6);
   flex-wrap: wrap;

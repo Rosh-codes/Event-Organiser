@@ -73,26 +73,26 @@ const AddEventForm = ({ onAddEvent, onClose }) => {
         <form className="add-event-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Title</label>
-            <input name="title" value={formData.title} onChange={handleChange} />
+            <input className="form-input" name="title" value={formData.title} onChange={handleChange} />
             {errors.title && <span className="error-message">{errors.title}</span>}
           </div>
 
           <div className="form-group">
             <label>Description</label>
-            <textarea name="description" value={formData.description} onChange={handleChange} />
+            <textarea className="form-textarea" name="description" value={formData.description} onChange={handleChange} />
             {errors.description && <span className="error-message">{errors.description}</span>}
           </div>
 
           <div className="form-row">
             <div className="form-group">
               <label>Image URL</label>
-              <input name="image" value={formData.image} onChange={handleChange} />
+              <input className="form-input" name="image" value={formData.image} onChange={handleChange} />
               {errors.image && <span className="error-message">{errors.image}</span>}
             </div>
 
             <div className="form-group">
               <label>Category</label>
-              <select name="category" value={formData.category} onChange={handleChange}>
+              <select className="form-input" name="category" value={formData.category} onChange={handleChange}>
                 {eventCategories.map((c) => (
                   <option key={c.value} value={c.value}>{c.label}</option>
                 ))}
@@ -104,33 +104,34 @@ const AddEventForm = ({ onAddEvent, onClose }) => {
           <div className="form-row">
             <div className="form-group">
               <label>Date</label>
-              <input type="date" name="date" value={formData.date} onChange={handleChange} />
+              <input className="form-input" type="date" name="date" value={formData.date} onChange={handleChange} />
               {errors.date && <span className="error-message">{errors.date}</span>}
             </div>
 
             <div className="form-group">
               <label>Time</label>
-              <input type="time" name="time" value={formData.time} onChange={handleChange} />
+              <input className="form-input" type="time" name="time" value={formData.time} onChange={handleChange} />
               {errors.time && <span className="error-message">{errors.time}</span>}
             </div>
           </div>
 
           <div className="form-group">
             <label>Location</label>
-            <input name="location" value={formData.location} onChange={handleChange} />
+            <input className="form-input" name="location" value={formData.location} onChange={handleChange} />
             {errors.location && <span className="error-message">{errors.location}</span>}
           </div>
 
           <div className="form-row">
             <div className="form-group">
-              <label>Attendees (max 30)</label>
-              <input type="number" name="attendees" value={formData.attendees} onChange={handleChange} min="0" max="30" />
+              <label>Attendees</label>
+              <input className="form-input" type="number" name="attendees" value={formData.attendees} onChange={handleChange} min="0" />
               {errors.attendees && <span className="error-message">{errors.attendees}</span>}
             </div>
 
             <div className="form-group">
-              <label>
-                <input type="checkbox" name="featured" checked={formData.featured} onChange={handleChange} /> Featured
+              <label className="form-checkbox-item">
+                <input className="form-checkbox" type="checkbox" name="featured" checked={formData.featured} onChange={handleChange} />
+                <span>Featured</span>
               </label>
             </div>
           </div>
