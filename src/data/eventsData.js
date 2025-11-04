@@ -1,4 +1,3 @@
-// Updated event data with diverse categories
 
 export const sampleEvents = [
   {

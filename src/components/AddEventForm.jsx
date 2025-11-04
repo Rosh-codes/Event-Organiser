@@ -34,7 +34,6 @@ const AddEventForm = ({ onAddEvent, onClose }) => {
     if (!formData.image) newErrors.image = "Image URL is required";
     const attendeesNum = Number(formData.attendees) || 0;
     if (attendeesNum < 0) newErrors.attendees = "Attendees must be a positive number";
-    if (attendeesNum > 30) newErrors.attendees = "Max 30 attendees allowed";
     return newErrors;
   };
 
