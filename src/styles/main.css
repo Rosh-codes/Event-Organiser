@@ -12,6 +12,7 @@
 @import "./components/footer.css";
 @import "./components/event-card.css";
 @import "./components/search-bar.css";
+@import "./components/login-prompt.css";
 
 /* Page styles */
 @import "./pages/landing.css";
@@ -60,9 +61,11 @@
 .logo {
   display: flex;
   align-items: center; 
-
 }
-
+.logo h1{
+  font-size: 1.3rem;
+  padding: 10px;
+}
 .logo img{
   height: 60px;
 }
@@ -249,8 +252,8 @@
 }
 
 .search-input {
-  flex: 1;
-  padding: var(--spacing-4) 0;
+  /* flex: 1; */
+  padding-left: 20px;
   border: none;
   outline: none;
   font-size: var(--font-base);
@@ -259,7 +262,7 @@
 }
 
 .search-input::placeholder {
-  color: var(--text-light);
+  color: rgb(100, 97, 97);
   font-style: italic;
 }
 

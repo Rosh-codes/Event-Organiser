@@ -35,7 +35,7 @@ const SearchBar = ({
   };
 
   return (
-    <div className="search-bar-container">
+    <div className="search-bar-container" id="search">
       <div className={`search-input-wrapper ${isFocused ? "focused" : ""}`}>
         <div className="search-icon"></div>{" "}
         {/* // add search icon and correct css */}

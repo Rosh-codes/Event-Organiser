@@ -99,7 +99,7 @@
 }
 
 .event-detail {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   margin-bottom: var(--spacing-2);
   font-size: var(--font-sm);

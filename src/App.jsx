@@ -4,13 +4,17 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
+import AddEventForm from "./components/AddEventForm";
 import LandingPage from "./pages/LandingPage";
 import "./styles/main.css";
+import { sampleEvents } from "./data/eventsData";
 
 function AppContent() {
   const { user, login, signup, logout, isLoading } = useAuth();
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
+  const [showAddEvent, setShowAddEvent] = useState(false);
+  const [events, setEvents] = useState(sampleEvents || []);
 
   const handleLoginClick = () => {
     setShowLogin(true);
@@ -20,6 +24,22 @@ function AppContent() {
   const handleSignupClick = () => {
     setShowSignup(true);
     setShowLogin(false);
+  };
+
+  const handleAddEventClick = () => {
+    setShowAddEvent(true);
+  };
+
+  const handleCloseAddEvent = () => {
+    setShowAddEvent(false);
+  };
+
+  const handleAddEvent = (newEvent) => {
+    // ensure id uniqueness
+    const nextId = events.length > 0 ? Math.max(...events.map(e => e.id)) + 1 : 1;
+    const eventToAdd = { id: nextId, ...newEvent };
+    setEvents((prev) => [eventToAdd, ...prev]);
+    setShowAddEvent(false);
   };
 
   const handleCloseModals = () => {
@@ -69,10 +89,16 @@ function AppContent() {
         onLoginClick={handleLoginClick}
         onSignupClick={handleSignupClick}
         onLogout={logout}
+        onAddEventClick={handleAddEventClick}
       />
 
       <main className="main-content">
-        <LandingPage user={user} onEventRegister={handleEventRegister} />
+        <LandingPage 
+          user={user} 
+          events={events}
+          onEventRegister={handleEventRegister}
+          onShowLoginForm={handleLoginClick}
+        />
       </main>
 
       <Footer />
@@ -90,6 +116,12 @@ function AppContent() {
           onSignup={handleSignup}
           onClose={handleCloseModals}
           onSwitchToLogin={handleSwitchToLogin}
+        />
+      )}
+      {showAddEvent && (
+        <AddEventForm
+          onAddEvent={handleAddEvent}
+          onClose={handleCloseAddEvent}
         />
       )}
     </div>
