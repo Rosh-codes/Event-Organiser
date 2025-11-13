@@ -1,6 +1,8 @@
 import  { useState } from "react";
+import { useAuth } from "./AuthContext";
 
 const LoginForm = ({ onLogin, onClose, onSwitchToSignup }) => {
+  const { login } = useAuth();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -53,14 +55,21 @@ const LoginForm = ({ onLogin, onClose, onSwitchToSignup }) => {
     }
 
     setIsLoading(true);
-    setTimeout(() => {
-      onLogin({
-        name: formData.email.split("@")[0],
-        email: formData.email,
-        isGuest: false,
-      });
+    try {
+      // Call backend login
+      const response = await login(formData.email, formData.password);
+      
+      // Call parent callback with user data
+      if (response.user) {
+        onLogin(response.user);
+      }
+      onClose();
+    } catch (error) {
+      setErrors({ submit: error.message || "Login failed. Please try again." });
+      console.error("Login error:", error);
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   // const handleGuestLogin = () => {
@@ -82,6 +91,11 @@ const LoginForm = ({ onLogin, onClose, onSwitchToSignup }) => {
         </div>
 
         <form onSubmit={handleSubmit} className="login-form">
+          {errors.submit && (
+            <div style={{ marginBottom: "1rem", padding: "0.75rem", backgroundColor: "#f8d7da", color: "#721c24", borderRadius: "4px" }}>
+              {errors.submit}
+            </div>
+          )}
           <div className="form-group">
             <label htmlFor="email">Email Address</label>
             <input

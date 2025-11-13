@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { loginUser, signupUser, logoutUser } from "../api/auth";
 
 const AuthContext = createContext();
 
@@ -13,6 +14,7 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("eventHub_user");
@@ -35,16 +37,59 @@ export const AuthProvider = ({ children }) => {
     }
   }, [user]);
 
-  const login = (userData) => {
-    setUser(userData);
+  /**
+   * Login with backend API
+   */
+  const login = async (email, password) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await loginUser(email, password);
+      
+      if (response.user) {
+        setUser(response.user);
+      }
+      
+      return response;
+    } catch (err) {
+      const errorMessage = err.message || "Login failed";
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  const signup = (userData) => {
-    setUser(userData);
+  /**
+   * Signup with backend API
+   */
+  const signup = async (name, email, password) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await signupUser(name, email, password);
+      
+      if (response.user) {
+        setUser(response.user);
+      }
+      
+      return response;
+    } catch (err) {
+      const errorMessage = err.message || "Signup failed";
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setIsLoading(false);
+    }
   };
 
+  /**
+   * Logout
+   */
   const logout = () => {
+    logoutUser();
     setUser(null);
+    setError(null);
   };
 
   const isAuthenticated = () => {
@@ -63,6 +108,8 @@ export const AuthProvider = ({ children }) => {
     isAuthenticated,
     isGuest,
     isLoading,
+    error,
+    setError,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

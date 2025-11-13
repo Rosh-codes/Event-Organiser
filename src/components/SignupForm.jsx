@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useAuth } from "./AuthContext";
 
 const SignupForm = ({ onSignup, onClose, onSwitchToLogin }) => {
+  const { signup } = useAuth();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -67,15 +69,25 @@ const SignupForm = ({ onSignup, onClose, onSwitchToLogin }) => {
     }
 
     setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      onSignup({
-        name: formData.name.trim(),
-        email: formData.email,
-        isGuest: false,
-      });
+    try {
+      // Call backend signup
+      const response = await signup(
+        formData.name.trim(),
+        formData.email,
+        formData.password
+      );
+      
+      // Call parent callback with user data
+      if (response.user) {
+        onSignup(response.user);
+      }
+      onClose();
+    } catch (error) {
+      setErrors({ submit: error.message || "Signup failed. Please try again." });
+      console.error("Signup error:", error);
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -92,6 +104,11 @@ const SignupForm = ({ onSignup, onClose, onSwitchToLogin }) => {
         </div>
 
         <form onSubmit={handleSubmit} className="signup-form">
+          {errors.submit && (
+            <div style={{ marginBottom: "1rem", padding: "0.75rem", backgroundColor: "#f8d7da", color: "#721c24", borderRadius: "4px" }}>
+              {errors.submit}
+            </div>
+          )}
           <div className="form-group">
             <label htmlFor="name">Full Name</label>
             <input

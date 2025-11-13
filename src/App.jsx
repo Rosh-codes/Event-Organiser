@@ -48,12 +48,14 @@ function AppContent() {
   };
 
   const handleLogin = (userData) => {
-    login(userData);
+    // User data is already set by AuthContext
+    // Just close the modal
     handleCloseModals();
   };
 
   const handleSignup = (userData) => {
-    signup(userData);
+    // User data is already set by AuthContext
+    // Just close the modal
     handleCloseModals();
   };
 
